@@ -61,14 +61,22 @@ def login_page():
     st.write(
         "🎂 **Arsh**, we're exactly a month away from your birthday! I wrote, "
         "composed, and even taught an AI to sing this Punjabi love song just for you. "
-        "To unlock it, prove you're the real star by remembering the password you "
-        "changed 48 hours ago—because obviously this gift is password-protected. 😜"
+        "This little app will be our home for every new song I release for you, "
+        "starting with this birthday track. To unlock it, prove you're the real star "
+        "by remembering the password you changed 48 hours ago—because obviously this "
+        "gift is password-protected. 😜"
     )
-    st.caption("P.S. The lines like 'Tere bina main na reh sakda' came straight from my heart, music and all. 🎶")
+    st.caption(
+        "P.S. The lines like 'Tere bina main na reh sakda' came straight from my heart, music and all. 🎶"
+    )
+    st.caption("Every future release will live here so you never miss a beat of our story. 💞")
 
     with st.sidebar:
         st.header("🔐 Unlock the surprise")
-        st.caption("Only the one who knows the secret email and its latest password may pass! ✨")
+        st.caption(
+            "Only the one who knows the secret email and its latest password may pass! ✨ "
+            "This gate keeps the surprise safe until you're ready."
+        )
         with st.form("login_form", clear_on_submit=False):
             email = st.text_input("Email")
             password = st.text_input("Password", type="password")
@@ -77,7 +85,7 @@ def login_page():
         if submitted:
             if email == AUTH_EMAIL and password == AUTH_PASSWORD:
                 st.session_state.authed = True
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Wrong answer. Try again! 😅")
 
@@ -104,7 +112,14 @@ def home_page():
     now = datetime.datetime.now(ZoneInfo("America/Toronto"))
     if now >= RELEASE_TIME:
         st.balloons()
+        st.subheader("Why this song exists 💌")
+        st.write(
+            "I poured my heart into this track to celebrate your birthday and to mark "
+            "the beginning of many songs I'll create just for you. Press play, close "
+            "your eyes, and feel the love in every beat."
+        )
         st.audio(str(SONG_FILE), format="audio/mp3")
+        st.write("### Lyrics")
         lyrics_md = SONG_LYRICS.replace("\n", "  \n")
         st.markdown(lyrics_md)
 
