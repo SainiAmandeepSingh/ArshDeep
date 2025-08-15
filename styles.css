@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background: #f5f5f5;
+  color: #333;
+}
+main {
+  max-width: 600px;
+  margin: auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#songList li {
+  margin-bottom: 1.5rem;
+  list-style: none;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
