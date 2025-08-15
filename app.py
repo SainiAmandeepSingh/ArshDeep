@@ -11,7 +11,7 @@ AUTH_PASSWORD = "Arsh2024"
 SONGS = [
     {
         "title": "Tere Bina",
-        "release_date": datetime.datetime(2024, 12, 1),
+        "release_date": datetime.datetime(2024, 12, 1, 18, 0),
         "file": Path("songs/Tere Bina.mp3"),
         "lyrics": "Lyrics coming soon",
     }
