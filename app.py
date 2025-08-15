@@ -51,22 +51,44 @@ City vi lagge khaali teri yaad ch 🌆
 Tere bina main na reh sakda 💔
 """
 
+# Day 2 message content
+DAY2_MESSAGE = """Mood Today: 🎵🔥❤️🥵💌
+
+Hey Sweetheart ❤️
+
+Today is 15th almost 16th August so technically one month minus one day until your birthday arrives, but I couldn’t wait. I couldn’t just sit and let the days pass like nothing was happening. My heart was restless, my mind was in overdrive, and my body kept giving me these heatwaves 🔥… that hot, urgey, craving mood 🥵. I felt this push inside me to do something that would live forever, something that wouldn’t just be a gift but a piece of my soul 💌.
+
+This song Tere Bina 🎵… it’s not just a track. It’s my heart ❤️, my love 🫀, my obsession 🔥 all poured into music. Every lyric ✍️ was written by me, every word born from the deepest corners of my journey in Canada 🇨🇦… the same journey where so many moments and feelings for you came alive 🌙✨. The hook line came to me the very day I returned, like my heart whispered it straight into my mind 💭, as if it was sent from a place where only you and I exist. In that moment, I knew it wasn’t just a lyric… it was a truth meant only for you 💖. This song belongs to you, the same way I do fully, completely, forever.
+
+I composed it 🎹, produced it 🎛️, and shaped the AI singing 🎤, guiding every note, every breath, every pause, every rise and fall so it would feel exactly how I want you to feel when you hear it 😌.
+
+Sweetheart, Tere Bina is for my one and only Arsh 💕. I don’t want anyone to take the place I have in your life. I know it sounds bad 😅, but I want you to be always mine. Even in the future, when you have your husband, your children 👨‍👩‍👧, your own life… I want to have a place in your heart that is irreplaceable. A place that is just mine. Sirf meri. Always ❤️.
+
+I want you to choose me over everyone, even the people who are in your life now or will come later. I want to make a place where it’s impossible for you to get away from me… from my emotions, my feelings, my presence… from craving that hug 🫂 only I can give, from that kiss 💋 that no one else can ever satisfy. I want to be that person you can’t live without, can’t break away from, can’t stay away from.
+
+You might stay with others, but I want your mind 🧠, your heart ❤️, and your soul 🕊️… and in all three, sirf mera hi naam likheya hove. I know maybe it shouldn’t be like this, but I want you to feel the safest with me and the most loved with me 🛡️💓. I know it’s possessive 😌, but I want to reach that level where you must come to me… like a lifelong addiction 😮‍💨 you can’t escape. Even if you get angry 😤, frustrated 😔, or mad at me, you still come back, because my love, my jhallak, pulls you back every single time.
+
+Maybe I haven’t reached that level yet 😌, but I will. And when I do, I’ll be the happiest man alive ❤️. There’s still a longer way to go, but I’m already walking toward it.
+
+So press play on Tere Bina 🎶, close your eyes 👁️‍🗨️, and let me own every thought in your mind for the next few minutes… because I love you more than the song can ever say ❤️🔥🥵.
+"""
+
+
+def render_song_section():
+    """Render the title, message, song, and lyrics."""
+    st.header("Tere Bina – Missing Anthem 🎶")
+    st.markdown("# 📅 15 & 16 August – Day 2")
+    st.markdown("> \"Some gifts fade… but this one will echo in your heart forever.\" 🎶❤️")
+    st.markdown(DAY2_MESSAGE)
+    st.audio(str(SONG_FILE), format="audio/mp3")
+    with st.expander("Lyrics 🎤"):
+        lyrics_md = SONG_LYRICS.replace("\n", "  \n")
+        st.markdown(lyrics_md)
+
 
 def login_page():
     """Render the login page."""
-    st.markdown("<h2 style='text-align:center;'>Welcome 🎉</h2>", unsafe_allow_html=True)
-    st.write(
-        "🎂 **Arsh**, we're exactly a month away from your birthday! I wrote, "
-        "composed, and even taught an AI to sing this Punjabi love song just for you. "
-        "This little app will be our home for every new song I release for you, "
-        "starting with this birthday track. To unlock it, prove you're the real star "
-        "by remembering the password you changed 48 hours ago—because obviously this "
-        "gift is password-protected. 😜"
-    )
-    st.caption(
-        "P.S. The lines like 'Tere bina main na reh sakda' came straight from my heart, music and all. 🎶"
-    )
-    st.caption("Every future release will live here so you never miss a beat of our story. 💞")
+    render_song_section()
 
     with st.sidebar:
         st.header("🔐 Unlock the surprise")
@@ -90,28 +112,7 @@ def login_page():
 def home_page():
     """Render the authenticated home page."""
     st.balloons()
-    st.header("Tere Bina – A Birthday Anthem 🎶")
-    st.subheader("Why this song exists 💌")
-    st.write(
-        """
-        From the moment the idea sparked, I knew this song had to be more than a melody. It's my heart,
-        recorded, arranged, and wrapped in sound just for you. I sat in my tiny room, headphones on,
-        piecing together chords while thinking about your smile. Every lyric was scribbled from
-        memories of our time together and the quiet nights I spent in Canada, thousands of miles away,
-        missing you more with every snowfall. The hook came to me on the flight home; those lines kept
-        echoing until I turned them into music. To make it special, I used AI to shape the instruments
-        and even to give a voice to my feelings. The software didn't just sing—it obeyed every tweak I
-        made so it could breathe the way I do when I think about you. Today marks a month before your
-        birthday, and this track is my promise that I'll keep creating art just for you. No one else
-        will ever weave something like this for your heart. I want you to crave the sound of my voice,
-        to feel safe when the world is heavy, and to know that every beat is a reminder that you are
-        egotistically mine—kise di hor di nahi, sirf meri.
-        """
-    )
-    st.audio(str(SONG_FILE), format="audio/mp3")
-    with st.expander("Lyrics 🎤"):
-        lyrics_md = SONG_LYRICS.replace("\n", "  \n")
-        st.markdown(lyrics_md)
+    render_song_section()
 
 
 def main():
