@@ -13,7 +13,7 @@ st.set_page_config(
 
 # Authentication constants
 AUTH_EMAIL = "ahkaur77@gmail.com"
-AUTH_PASSWORD = "Arsh2024"
+AUTH_PASSWORD = "Arsh2004"
 
 # Song data
 RELEASE_TIME = datetime.datetime(2024, 12, 1, 18, 0, tzinfo=ZoneInfo("America/Toronto"))
@@ -105,7 +105,8 @@ def home_page():
     if now >= RELEASE_TIME:
         st.balloons()
         st.audio(str(SONG_FILE), format="audio/mp3")
-        st.markdown(SONG_LYRICS)
+        lyrics_md = SONG_LYRICS.replace("\n", "  \n")
+        st.markdown(lyrics_md)
 
 
 def main():
