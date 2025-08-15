@@ -52,6 +52,14 @@ Tere bina main na reh sakda 💔
 """
 
 # Day 2 message content
+# Intro and full message
+DAY2_INTRO = """Mood Today: 🎵🔥❤️🥵💌
+
+Hey Sweetheart ❤️
+
+Today is 15th almost 16th August so technically one month minus one day until your birthday arrives, but I couldn’t wait. I couldn’t just sit and let the days pass like nothing was happening. My heart was restless, my mind was in overdrive, and my body kept giving me these heatwaves 🔥… that hot, urgey, craving mood 🥵. I felt this push inside me to do something that would live forever, something that wouldn’t just be a gift but a piece of my soul 💌.
+"""
+
 DAY2_MESSAGE = """Mood Today: 🎵🔥❤️🥵💌
 
 Hey Sweetheart ❤️
@@ -74,10 +82,21 @@ So press play on Tere Bina 🎶, close your eyes 👁️‍🗨️, and let me o
 """
 
 
+def render_intro_section():
+    """Render the teaser text before authentication."""
+    st.title("Tere Bina – Missing Anthem 🎶")
+    st.header("📅 15 & 16 August – Day 2")
+    st.markdown("> \"Some gifts fade… but this one will echo in your heart forever.\" 🎶❤️")
+    st.markdown(DAY2_INTRO)
+    st.markdown(
+        "**Want to know the rest of the text?** Unlock it using the email and password in the sidebar."
+    )
+
+
 def render_song_section():
-    """Render the title, message, song, and lyrics."""
-    st.header("Tere Bina – Missing Anthem 🎶")
-    st.markdown("# 📅 15 & 16 August – Day 2")
+    """Render the full title, message, song, and lyrics."""
+    st.title("Tere Bina – Missing Anthem 🎶")
+    st.header("📅 15 & 16 August – Day 2")
     st.markdown("> \"Some gifts fade… but this one will echo in your heart forever.\" 🎶❤️")
     st.markdown(DAY2_MESSAGE)
     st.audio(str(SONG_FILE), format="audio/mp3")
@@ -88,7 +107,7 @@ def render_song_section():
 
 def login_page():
     """Render the login page."""
-    render_song_section()
+    render_intro_section()
 
     with st.sidebar:
         st.header("🔐 Unlock the surprise")
