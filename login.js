@@ -1,6 +1,6 @@
 const AUTH_EMAIL = "ahahkaur77@gmail.com";
 // Replace the password below with the correct one.
-const AUTH_PASSWORD = "Asecret4";
+const AUTH_PASSWORD = "Arsh2024";
 
 document.getElementById("loginForm").addEventListener("submit", (e) => {
   e.preventDefault();

@@ -1,14 +1,8 @@
 const songs = [
   {
-    title: "Birthday Vibes",
+    title: "Tere Bina",
     releaseDate: "2024-12-01T00:00:00",
-    file: "songs/birthday-vibes.mp3",
-    lyrics: `Here comes the beat\nCelebrate the heat`
-  },
-  {
-    title: "Future Song",
-    releaseDate: "2024-12-10T00:00:00",
-    file: "",
+    file: "songs/Tere Bina.mp3",
     lyrics: `Lyrics coming soon`
   }
 ];
