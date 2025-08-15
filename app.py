@@ -88,8 +88,9 @@ def render_intro_section():
     st.header("📅 15 & 16 August – Day 2")
     st.markdown("> \"Some gifts fade… but this one will echo in your heart forever.\" 🎶❤️")
     st.markdown(DAY2_INTRO)
+    st.markdown("This song **Tere Bina** 🎵… it's not just a track. It's my heart... ❤️")
     st.markdown(
-        "**Want to know the rest of the text?** Unlock it using the email and password in the sidebar."
+        "To unlock the full song and text, log in using the email and password in the sidebar."
     )
 
 
@@ -114,6 +115,11 @@ def login_page():
         st.caption(
             "Only the one who knows the secret email and its latest password may pass! ✨ "
             "This gate keeps the surprise safe until you're ready."
+        )
+        st.caption(
+            "Hint to her here... That I am stalking you... all the time... I'm kidding... "
+            "BUT Tu apni email da passowrd kiyu change kita, oh v 47 hours before... Kutti... Jeyi... "
+            "You think you are not going to tell, and I will not know... Jeh, tenu apna purana password chettan, tehn use that instead!"
         )
         with st.form("login_form", clear_on_submit=False):
             email = st.text_input("Email")
