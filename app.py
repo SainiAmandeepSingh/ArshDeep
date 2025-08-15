@@ -1,6 +1,4 @@
-import datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 import streamlit as st
 
@@ -16,7 +14,6 @@ AUTH_EMAIL = "ahkaur77@gmail.com"
 AUTH_PASSWORD = "Arsh2004"
 
 # Song data
-RELEASE_TIME = datetime.datetime(2024, 12, 1, 18, 0, tzinfo=ZoneInfo("America/Toronto"))
 SONG_FILE = Path("songs/Tere Bina.mp3")
 SONG_LYRICS = """Tere bina main na reh sakda ❤️
 Gallan vich teri rooh da rang wakda 💫
@@ -90,36 +87,29 @@ def login_page():
                 st.error("Wrong answer. Try again! 😅")
 
 
-def countdown_component():
-    """Display a countdown to the song release."""
-    now = datetime.datetime.now(datetime.timezone.utc).astimezone(ZoneInfo("America/Toronto"))
-    diff = RELEASE_TIME - now
-
-    if diff.total_seconds() > 0:
-        days = diff.days
-        hours, remainder = divmod(diff.seconds, 3600)
-        minutes, seconds = divmod(remainder, 60)
-        st.subheader(f"{days}d {hours}h {minutes}m {seconds}s")
-    else:
-        st.subheader("0d 0h 0m 0s")
-
-
 def home_page():
     """Render the authenticated home page."""
-    st.header("Countdown to Release ⏳")
-    countdown_component()
-
-    now = datetime.datetime.now(ZoneInfo("America/Toronto"))
-    if now >= RELEASE_TIME:
-        st.balloons()
-        st.subheader("Why this song exists 💌")
-        st.write(
-            "I poured my heart into this track to celebrate your birthday and to mark "
-            "the beginning of many songs I'll create just for you. Press play, close "
-            "your eyes, and feel the love in every beat."
-        )
-        st.audio(str(SONG_FILE), format="audio/mp3")
-        st.write("### Lyrics")
+    st.balloons()
+    st.header("Tere Bina – A Birthday Anthem 🎶")
+    st.subheader("Why this song exists 💌")
+    st.write(
+        """
+        From the moment the idea sparked, I knew this song had to be more than a melody. It's my heart,
+        recorded, arranged, and wrapped in sound just for you. I sat in my tiny room, headphones on,
+        piecing together chords while thinking about your smile. Every lyric was scribbled from
+        memories of our time together and the quiet nights I spent in Canada, thousands of miles away,
+        missing you more with every snowfall. The hook came to me on the flight home; those lines kept
+        echoing until I turned them into music. To make it special, I used AI to shape the instruments
+        and even to give a voice to my feelings. The software didn't just sing—it obeyed every tweak I
+        made so it could breathe the way I do when I think about you. Today marks a month before your
+        birthday, and this track is my promise that I'll keep creating art just for you. No one else
+        will ever weave something like this for your heart. I want you to crave the sound of my voice,
+        to feel safe when the world is heavy, and to know that every beat is a reminder that you are
+        egotistically mine—kise di hor di nahi, sirf meri.
+        """
+    )
+    st.audio(str(SONG_FILE), format="audio/mp3")
+    with st.expander("Lyrics 🎤"):
         lyrics_md = SONG_LYRICS.replace("\n", "  \n")
         st.markdown(lyrics_md)
 
